@@ -23,8 +23,9 @@
       --text-color: #f4f4f4;
       --link-color: white;
     }
-    .email-link{
+    .email-link, .whatsapp-link {
       color: var(--link-color);
+      text-decoration: none;
     }
     .container {
       max-width: 900px;
@@ -72,7 +73,7 @@
     select {
       padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 5px
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -90,12 +91,12 @@
     </div>
     <div class="contact" id="contact">
       <p>Email: <a href="mailto:rafaelfspedra@yahoo.com.br" class="email-link">rafaelfspedra@yahoo.com.br</a></p>
-      <p>Telefone: (61) 99183-4920</p>
+      <p>Telefone: <a href="https://wa.me/5561991834920" target="_blank" class="whatsapp-link">(61) 99183-4920</a></p>
       <p>Localização: Brasília, Distrito Federal, Brasil</p>
     </div>
     <div class="section" id="profile">
       <h2>Perfil</h2>
-      <p>Organizado, eficiente e pontual em busca de oportunidades que proporcionem um ambiente aberto para continuar crescendo.</p>
+      <p>Organizado, eficiente e pontual, sou um profissional amigável, confiável e detalhista, com facilidade para aprender rapidamente novas tarefas e tecnologias. Tenho experiência em atuar de forma independente, mas também valorizo o trabalho em equipe, colaborando para um ambiente de trabalho positivo, respeitoso e produtivo. Possuo excelente habilidade de comunicação e de relacionamento interpessoal, sempre mantendo uma postura ética e proativa. Busco uma oportunidade de estágio ou emprego de longo prazo em uma empresa que valorize o desenvolvimento contínuo e ofereça desafios para meu crescimento pessoal e profissional.</p>
     </div>
     <div class="section" id="education">
       <h2>Educação</h2>
@@ -107,6 +108,14 @@
         <li>Atenção aos detalhes</li>
         <li>Gerenciamento de tempo</li>
         <li>Capacidade de seguir instruções</li>
+        <li>Comunicação eficaz</li>
+        <li>Resolução de problemas</li>
+        <li>Trabalho em equipe</li>
+        <li>Adaptabilidade</li>
+        <li>Pensamento crítico</li>
+        <li>Organização</li>
+        <li>Proatividade</li>
+        <li>Aprendizado contínuo</li>
       </ul>
     </div>
     <div class="section" id="tech">
@@ -145,7 +154,6 @@
     }
     function toggleLanguage(){
       const select = document.getElementById("opcoes");
-      const nome = document.getElementById('name');
       const perfil = document.getElementById('profile');
       const educacao = document.getElementById('education');
       const habilidades = document.getElementById('skills');
@@ -154,37 +162,34 @@
       const idiomas = document.getElementById('languages');
       const contato = document.getElementById('contact');
       const opcao = select.value;
-        if (opcao === "ING") {
-          perfil.innerHTML = '<h2>Profile</h2><p>Organized, efficient and punctual, seeking opportunities that provide an open environment to continue growing.</p>';
-          educacao.innerHTML = '<h2>Education</h2><p>Studying Computer Science<br />Uniceub University | until November 2027</p>';
-          habilidades.innerHTML = '<h2>Skills</h2><ul><li>Attention to detail</li><li>Time management</li><li>Ability to follow instructions</li></ul>';
-          tecnico.innerHTML = '<h2>Technical Knowledge</h2><ul><li>C Language (Intermediate)</li><li>HTML/CSS (Intermediate)</li><li>JavaScript (Intermediate)</li><li>Python (Intermediate)</li><li>Java (Basic)</li><li>SQL (Intermediate)</li></ul>';
-          experiencia.innerHTML = '<h2>Experience</h2><p><strong>Programmer</strong>, Jan 2024 - Present<br />Freelance, Brasília</p>';
-          idiomas.innerHTML = '<h2>Languages</h2><ul><li>Portuguese - Native</li><li>English - Intermediate</li><li>Spanish - Intermediate</li></ul>';
-          contato.innerHTML = '<p>Email: <a href="mailto:rafaelfspedra@yahoo.com.br" class="email-link">rafaelfspedra@yahoo.com.br</a></p><p>Phone: +55 61 99183-4920</p><p>Location: Brasília, Federal District, Brazil</p>';
-        }
-        else if(opcao === "PT"){
-          perfil.innerHTML = '<h2>Perfil</h2><p>Organizado, eficiente e pontual em busca de oportunidades que proporcionem um ambiente aberto para continuar crescendo.</p>';
-          educacao.innerHTML = '<h2>Educação</h2><p>Cursando Ciência da Computação<br />Faculdade Uniceub | até novembro de 2027</p>';
-          habilidades.innerHTML = '<h2>Habilidades</h2><ul><li>Atenção aos detalhes</li><li>Gerenciamento de tempo</li><li>Capacidade de seguir instruções</li></ul>';
-          tecnico.innerHTML = '<h2>Conhecimentos Técnicos</h2><ul><li>Linguagem C (Intermediário)</li><li>HTML/CSS (Intermediário)</li><li>JavaScript (Intermediário)</li><li>Python (Intermediário)</li><li>Java (Básico)</li><li>SQL (Intermediário)</li></ul>';
-          experiencia.innerHTML = '<h2>Experiências</h2><p><strong>Programador</strong>, Jan 2024 - Presente<br />Independente, Brasília</p>';
-          idiomas.innerHTML = '<h2>Idiomas</h2><ul><li>Português - Nativo</li><li>Inglês - Intermediário</li><li>Espanhol - Intermediário</li></ul>';
-          contato.innerHTML = '<p>Email: <a href="mailto:rafaelfspedra@yahoo.com.br" class="email-link">rafaelfspedra@yahoo.com.br</a></p><p>Telefone: (61) 99183-4920</p><p>Localização: Brasília, Distrito Federal, Brasil</p>';
-            }
-      else if (opcao === "ESP"){
-        perfil.innerHTML = '<h2>Perfil</h2><p>Organizado, eficiente y puntual en busca de oportunidades que proporcionen un ambiente abierto para continuar creciendo.</p>';
-        educacao.innerHTML = '<h2>Educación</h2><p>Cursando Ciência da Computação<br />Faculdade Uniceub | hasta noviembre de 2027</p>';
-        habilidades.innerHTML = '<h2>Habilidades</h2><ul><li>Atención a los detalles</li><li>Gestión de tiempo</li><li>Capacidad de seguir instrucciones</li></ul>';
-        tecnico.innerHTML = '<h2>Conocimientos Técnicos</h2><ul><li>Lenguaje C (Intermedio)</li><li>HTML/CSS (Intermedio)</li><li>JavaScript (intermedio)</li><li>Python (intermedio)</li><li>Java (Básico)</li><li>SQL (intermedio)</li></ul>';
+
+      if (opcao === "ING") {
+        perfil.innerHTML = '<h2>Profile</h2><p>Organized, efficient, and punctual, I am a friendly, reliable, and detail-oriented professional with a strong ability to quickly learn new tasks and technologies. I have experience working independently, but I also value teamwork and contribute to a respectful, positive, and productive work environment. I possess excellent communication and interpersonal skills, always maintaining an ethical and proactive attitude. I am seeking an internship or long-term position in a company that values continuous development and provides challenges for my personal and professional growth.</p>';
+        educacao.innerHTML = '<h2>Education</h2><p>Studying Computer Science<br />Uniceub University | until November 2027</p>';
+        habilidades.innerHTML = '<h2>Skills</h2><ul><li>Attention to detail</li><li>Time management</li><li>Ability to follow instructions</li><li>Effective communication</li><li>Problem solving</li><li>Teamwork</li><li>Adaptability</li><li>Critical thinking</li><li>Organization</li><li>Proactivity</li><li>Continuous learning</li></ul>';
+        tecnico.innerHTML = '<h2>Technical Knowledge</h2><ul><li>C Language (Intermediate)</li><li>HTML/CSS (Intermediate)</li><li>JavaScript (Intermediate)</li><li>Python (Intermediate)</li><li>Java (Basic)</li><li>SQL (Intermediate)</li></ul>';
+        experiencia.innerHTML = '<h2>Experience</h2><p><strong>Programmer</strong>, Jan 2024 - Present<br />Freelance, Brasília</p>';
+        idiomas.innerHTML = '<h2>Languages</h2><ul><li>Portuguese - Native</li><li>English - Intermediate</li><li>Spanish - Intermediate</li></ul>';
+        contato.innerHTML = '<p>Email: <a href="mailto:rafaelfspedra@yahoo.com.br" class="email-link">rafaelfspedra@yahoo.com.br</a></p><p>Phone: <a href="https://wa.me/5561991834920" target="_blank" class="whatsapp-link">+55 61 99183-4920</a></p><p>Location: Brasília, Federal District, Brazil</p>';
+      } else if(opcao === "PT") {
+        perfil.innerHTML = '<h2>Perfil</h2><p>Organizado, eficiente e pontual, sou um profissional amigável, confiável e detalhista, com facilidade para aprender rapidamente novas tarefas e tecnologias. Tenho experiência em atuar de forma independente, mas também valorizo o trabalho em equipe, colaborando para um ambiente de trabalho positivo, respeitoso e produtivo. Possuo excelente habilidade de comunicação e de relacionamento interpessoal, sempre mantendo uma postura ética e proativa. Busco uma oportunidade de estágio ou emprego de longo prazo em uma empresa que valorize o desenvolvimento contínuo e ofereça desafios para meu crescimento pessoal e profissional.</p>';
+        educacao.innerHTML = '<h2>Educação</h2><p>Cursando Ciência da Computação<br />Faculdade Uniceub | até novembro de 2027</p>';
+        habilidades.innerHTML = '<h2>Habilidades</h2><ul><li>Atenção aos detalhes</li><li>Gerenciamento de tempo</li><li>Capacidade de seguir instruções</li><li>Comunicação eficaz</li><li>Resolução de problemas</li><li>Trabalho em equipe</li><li>Adaptabilidade</li><li>Pensamento crítico</li><li>Organização</li><li>Proatividade</li><li>Aprendizado contínuo</li></ul>';
+        tecnico.innerHTML = '<h2>Conhecimentos Técnicos</h2><ul><li>Linguagem C (Intermediário)</li><li>HTML/CSS (Intermediário)</li><li>JavaScript (Intermediário)</li><li>Python (Intermediário)</li><li>Java (Básico)</li><li>SQL (Intermediário)</li></ul>';
+        experiencia.innerHTML = '<h2>Experiências</h2><p><strong>Programador</strong>, Jan 2024 - Presente<br />Independente, Brasília</p>';
+        idiomas.innerHTML = '<h2>Idiomas</h2><ul><li>Português - Nativo</li><li>Inglês - Intermediário</li><li>Espanhol - Intermediário</li></ul>';
+        contato.innerHTML = '<p>Email: <a href="mailto:rafaelfspedra@yahoo.com.br" class="email-link">rafaelfspedra@yahoo.com.br</a></p><p>Telefone: <a href="https://wa.me/5561991834920" target="_blank" class="whatsapp-link">(61) 99183-4920</a></p><p>Localização: Brasília, Distrito Federal, Brasil</p>';
+      } else if (opcao === "ESP") {
+        perfil.innerHTML = '<h2>Perfil</h2><p>Organizado, eficiente y puntual, soy un profesional amigable, confiable y detallista, con gran capacidad para aprender rápidamente nuevas tareas y tecnologías. Tengo experiencia trabajando de forma independiente, pero también valoro el trabajo en equipo y contribuyo a un ambiente laboral positivo, respetuoso y productivo. Poseo excelentes habilidades de comunicación y relaciones interpersonales, manteniendo siempre una actitud ética y proactiva. Busco una oportunidad de prácticas o empleo a largo plazo en una empresa que valore el desarrollo continuo y ofrezca desafíos para mi crecimiento personal y profesional.</p>';
+        educacao.innerHTML = '<h2>Educación</h2><p>Cursando Ciencia de la Computación<br />Universidad Uniceub | hasta noviembre de 2027</p>';
+        habilidades.innerHTML = '<h2>Habilidades</h2><ul><li>Atención a los detalles</li><li>Gestión del tiempo</li><li>Capacidad de seguir instrucciones</li><li>Comunicación eficaz</li><li>Resolución de problemas</li><li>Trabajo en equipo</li><li>Adaptabilidad</li><li>Pensamiento crítico</li><li>Organización</li><li>Proactividad</li><li>Aprendizaje continuo</li></ul>';
+        tecnico.innerHTML = '<h2>Conocimientos Técnicos</h2><ul><li>Lenguaje C (Intermedio)</li><li>HTML/CSS (Intermedio)</li><li>JavaScript (Intermedio)</li><li>Python (Intermedio)</li><li>Java (Básico)</li><li>SQL (Intermedio)</li></ul>';
         experiencia.innerHTML = '<h2>Experiencias</h2><p><strong>Programador</strong>, Jan 2024 - Presente<br />Independiente, Brasília</p>';
         idiomas.innerHTML = '<h2>Idiomas</h2><ul><li>Portugués - Nativo</li><li>Inglés - Intermedio</li><li>Español - Intermedio</li></ul>';
-        contato.innerHTML = '<p>Email: <a href="mailto:rafaelfspedra@yahoo.com.br" class="email-link">rafaelfspedra@yahoo.com.br</a></p><p>Teléfono: (61) 99183-4920</p><p>Localización: Brasília, Distrito Federal, Brasil</p>';
-      }
-      else {
-        location.reload();
+        contato.innerHTML = '<p>Email: <a href="mailto:rafaelfspedra@yahoo.com.br" class="email-link">rafaelfspedra@yahoo.com.br</a></p><p>Teléfono: <a href="https://wa.me/5561991834920" target="_blank" class="whatsapp-link">(61) 99183-4920</a></p><p>Localización: Brasília, Distrito Federal, Brasil</p>';
       }
     }
   </script>
 </body>
 </html>
+
