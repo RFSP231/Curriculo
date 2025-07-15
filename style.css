@@ -1,3 +1,4 @@
+/* Base que você já tem */
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
@@ -32,6 +33,7 @@ header {
 
 nav {
   display: flex;
+  flex-wrap: wrap; /* Permite quebra em telas pequenas */
   justify-content: center;
   gap: 1rem;
   background: #121212;
@@ -114,4 +116,44 @@ footer {
   background: #0a0a0a;
   font-size: 0.9rem;
   color: #888;
+}
+
+/* ============================
+   RESPONSIVIDADE
+   ============================ */
+
+/* Telas pequenas: Celulares */
+@media (max-width: 600px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  nav {
+    flex-direction: column; /* Menu em coluna */
+    align-items: center;
+  }
+
+  nav a {
+    padding: 0.5rem 0;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Telas médias: Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 85%;
+  }
 }
