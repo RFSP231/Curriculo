@@ -4,13 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rafael Pedra | Desenvolvedor</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #f0f0f0;
@@ -36,7 +40,6 @@
       color: #00fff7;
       border: 1px solid #00fff7;
       padding: 0.3rem 0.5rem;
-      font-family: 'Orbitron', sans-serif;
       border-radius: 5px;
       margin-top: 1rem;
     }
@@ -63,15 +66,15 @@
     }
 
     .card {
-      background: linear-gradient(135deg, rgba(0,255,247,0.05), rgba(0,255,247,0.02));
-      border: 1px solid rgba(0,255,247,0.2);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 247, 0.15);
       backdrop-filter: blur(10px);
-      border-radius: 16px;
       margin: 2rem auto;
       padding: 1.5rem;
+      border-radius: 16px;
       width: 90%;
       max-width: 800px;
-      box-shadow: 0 0 20px #00fff733, 0 0 10px #00fff744 inset;
+      box-shadow: 0 0 20px #00fff755, 0 0 10px #00fff733 inset;
       transform: translateY(50px);
       opacity: 0;
       transition: all 0.8s ease-out;
@@ -115,6 +118,17 @@
       font-size: 0.9rem;
       color: #888;
     }
+
+    .contact-icon {
+      margin-left: 10px;
+      color: #00fff7;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .contact-icon:hover {
+      color: #00b8a9;
+    }
   </style>
 </head>
 <body>
@@ -131,20 +145,20 @@
   </header>
 
   <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#experiencia">Experiência</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#contato">Contato</a>
+    <a href="#sobre" data-key="sobreNav">Sobre</a>
+    <a href="#habilidades" data-key="habilidadesNav">Habilidades</a>
+    <a href="#experiencia" data-key="experienciaNav">Experiência</a>
+    <a href="#projetos" data-key="projetosNav">Projetos</a>
+    <a href="#contato" data-key="contatoNav">Contato</a>
   </nav>
 
   <section id="sobre" class="card">
-    <h2>Sobre Mim</h2>
+    <h2 data-key="sobre">Sobre Mim</h2>
     <p id="sobre-texto">Sou um estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e programação. Estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para soluções inovadoras.</p>
   </section>
 
   <section id="habilidades" class="card">
-    <h2>Habilidades Técnicas</h2>
+    <h2 data-key="habilidades">Habilidades Técnicas</h2>
     <ul>
       <li>HTML/CSS (Intermediário)</li>
       <li>JavaScript (Intermediário)</li>
@@ -156,7 +170,7 @@
   </section>
 
   <section id="experiencia" class="card">
-    <h2>Experiência</h2>
+    <h2 data-key="experiencia">Experiência</h2>
     <p><strong>Programador Independente</strong> (Jan 2024 - Presente)</p>
     <ul>
       <li>Desenvolvimento Front-End com HTML e CSS.</li>
@@ -166,15 +180,25 @@
   </section>
 
   <section id="projetos" class="card">
-    <h2>Meus Projetos</h2>
+    <h2 data-key="projetos">Meus Projetos</h2>
     <p>Confira meus projetos e códigos:</p>
     <a href="https://github.com/SEU_USUARIO" target="_blank" class="button" id="btn-github">Ver no GitHub</a>
   </section>
 
   <section id="contato" class="card">
-    <h2>Contato</h2>
-    <p><i class="fas fa-envelope"></i> rafaelfspedra@yahoo.com.br</p>
-    <p><i class="fas fa-phone"></i> (61) 99183-4920</p>
+    <h2 data-key="contato">Contato</h2>
+    <p>
+      <i class="fas fa-envelope"></i> rafaelfspedra@yahoo.com.br
+      <a href="mailto:rafaelfspedra@yahoo.com.br" class="contact-icon" title="Enviar e-mail">
+        <i class="fas fa-paper-plane"></i>
+      </a>
+    </p>
+    <p>
+      <i class="fas fa-phone"></i> (61) 99183-4920
+      <a href="https://wa.me/5561991834920" target="_blank" class="contact-icon" title="Enviar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </p>
     <p><i class="fas fa-map-marker-alt"></i> Brasília - DF, Brasil</p>
   </section>
 
@@ -183,7 +207,7 @@
   </footer>
 
   <script>
-    // Animação dos cards
+    // Animação dos cards ao rolar
     window.addEventListener('scroll', () => {
       document.querySelectorAll('.card').forEach((card) => {
         const top = card.getBoundingClientRect().top;
@@ -194,7 +218,7 @@
       });
     });
 
-    // Three.js - fundo com partículas
+    // Fundo 3D com Three.js
     const canvas = document.querySelector('#bg-3d');
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -224,50 +248,71 @@
       pt: {
         subtitle: "Desenvolvedor em formação | Ciência da Computação",
         sobre: "Sobre Mim",
-        sobreTexto: "Sou um estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e programação. Estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para soluções inovadoras.",
+        sobreTexto: "Sou um estudante de Ciência da Computação no UniCEUB...",
         habilidades: "Habilidades Técnicas",
         experiencia: "Experiência",
         projetos: "Meus Projetos",
         verGithub: "Ver no GitHub",
-        contato: "Contato"
+        contato: "Contato",
+        sobreNav: "Sobre",
+        habilidadesNav: "Habilidades",
+        experienciaNav: "Experiência",
+        projetosNav: "Projetos",
+        contatoNav: "Contato"
       },
       en: {
         subtitle: "Developer in training | Computer Science",
         sobre: "About Me",
-        sobreTexto: "I'm a Computer Science student at UniCEUB, passionate about technology and coding. Always seeking challenges to grow and build innovative solutions.",
+        sobreTexto: "I'm a Computer Science student at UniCEUB...",
         habilidades: "Technical Skills",
         experiencia: "Experience",
         projetos: "My Projects",
         verGithub: "View on GitHub",
-        contato: "Contact"
+        contato: "Contact",
+        sobreNav: "About",
+        habilidadesNav: "Skills",
+        experienciaNav: "Experience",
+        projetosNav: "Projects",
+        contatoNav: "Contact"
       },
       es: {
         subtitle: "Desarrollador en formación | Ciencias de la Computación",
         sobre: "Sobre Mí",
-        sobreTexto: "Soy estudiante de Ciencias de la Computación en UniCEUB, apasionado por la tecnología y la programación. Siempre en busca de desafíos para crecer profesionalmente y crear soluciones innovadoras.",
+        sobreTexto: "Soy estudiante de Ciencias de la Computación en UniCEUB...",
         habilidades: "Habilidades Técnicas",
         experiencia: "Experiencia",
         projetos: "Mis Proyectos",
         verGithub: "Ver en GitHub",
-        contato: "Contacto"
+        contato: "Contacto",
+        sobreNav: "Sobre",
+        habilidadesNav: "Habilidades",
+        experienciaNav: "Experiencia",
+        projetosNav: "Proyectos",
+        contatoNav: "Contacto"
       }
     };
 
     const langSelector = document.getElementById("lang-selector");
+
     langSelector.addEventListener("change", () => {
       const lang = langSelector.value;
       const t = translations[lang];
       document.getElementById("subtitle").innerText = t.subtitle;
-      document.querySelector("#sobre h2").innerText = t.sobre;
+      document.querySelector('[data-key="sobre"]').innerText = t.sobre;
       document.getElementById("sobre-texto").innerText = t.sobreTexto;
-      document.querySelector("#habilidades h2").innerText = t.habilidades;
-      document.querySelector("#experiencia h2").innerText = t.experiencia;
-      document.querySelector("#projetos h2").innerText = t.projetos;
+      document.querySelector('[data-key="habilidades"]').innerText = t.habilidades;
+      document.querySelector('[data-key="experiencia"]').innerText = t.experiencia;
+      document.querySelector('[data-key="projetos"]').innerText = t.projetos;
       document.getElementById("btn-github").innerText = t.verGithub;
-      document.querySelector("#contato h2").innerText = t.contato;
+      document.querySelector('[data-key="contato"]').innerText = t.contato;
+
+      // Atualizar nav
+      document.querySelector('[data-key="sobreNav"]').innerText = t.sobreNav;
+      document.querySelector('[data-key="habilidadesNav"]').innerText = t.habilidadesNav;
+      document.querySelector('[data-key="experienciaNav"]').innerText = t.experienciaNav;
+      document.querySelector('[data-key="projetosNav"]').innerText = t.projetosNav;
+      document.querySelector('[data-key="contatoNav"]').innerText = t.contatoNav;
     });
   </script>
 </body>
 </html>
-
-
