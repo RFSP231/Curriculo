@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rafael Pedra | Desenvolvedor</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
@@ -29,8 +27,18 @@
     header {
       background: rgba(0, 0, 0, 0.6);
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem;
       color: #00fff7;
+    }
+
+    #lang-selector {
+      background: #121212;
+      color: #00fff7;
+      border: 1px solid #00fff7;
+      padding: 0.3rem 0.5rem;
+      font-family: 'Orbitron', sans-serif;
+      border-radius: 5px;
+      margin-top: 1rem;
     }
 
     nav {
@@ -55,16 +63,23 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.05);
+      background: linear-gradient(135deg, rgba(0,255,247,0.05), rgba(0,255,247,0.02));
+      border: 1px solid rgba(0,255,247,0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
       margin: 2rem auto;
       padding: 1.5rem;
-      border-radius: 12px;
       width: 90%;
       max-width: 800px;
-      box-shadow: 0 0 20px #00fff755;
+      box-shadow: 0 0 20px #00fff733, 0 0 10px #00fff744 inset;
       transform: translateY(50px);
       opacity: 0;
       transition: all 0.8s ease-out;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 25px #00fff7aa, 0 0 15px #00fff7aa inset;
     }
 
     .card h2 {
@@ -107,20 +122,25 @@
 
   <header>
     <h1>Rafael Pedra</h1>
-    <p>Desenvolvedor em formação | Ciência da Computação</p>
+    <p id="subtitle">Desenvolvedor em formação | Ciência da Computação</p>
+    <select id="lang-selector">
+      <option value="pt" selected>🇧🇷 Português</option>
+      <option value="en">🇺🇸 English</option>
+      <option value="es">🇪🇸 Español</option>
+    </select>
   </header>
 
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#habilidades">Habilidades</a>
     <a href="#experiencia">Experiência</a>
-    <a href="#contato">Contato</a>
     <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
   </nav>
 
   <section id="sobre" class="card">
     <h2>Sobre Mim</h2>
-    <p>Sou um estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e programação. Estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para soluções inovadoras.</p>
+    <p id="sobre-texto">Sou um estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e programação. Estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para soluções inovadoras.</p>
   </section>
 
   <section id="habilidades" class="card">
@@ -148,7 +168,7 @@
   <section id="projetos" class="card">
     <h2>Meus Projetos</h2>
     <p>Confira meus projetos e códigos:</p>
-    <a href="https://github.com/SEU_USUARIO" target="_blank" class="button">Ver no GitHub</a>
+    <a href="https://github.com/SEU_USUARIO" target="_blank" class="button" id="btn-github">Ver no GitHub</a>
   </section>
 
   <section id="contato" class="card">
@@ -163,7 +183,7 @@
   </footer>
 
   <script>
-    // Animação de entrada
+    // Animação dos cards
     window.addEventListener('scroll', () => {
       document.querySelectorAll('.card').forEach((card) => {
         const top = card.getBoundingClientRect().top;
@@ -174,13 +194,12 @@
       });
     });
 
-    // Three.js - Fundo com partículas
+    // Three.js - fundo com partículas
     const canvas = document.querySelector('#bg-3d');
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({canvas, alpha: true});
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-
     const particlesGeometry = new THREE.BufferGeometry();
     const count = 5000;
     const positions = new Float32Array(count * 3);
@@ -188,18 +207,65 @@
       positions[i] = (Math.random() - 0.5) * 100;
     }
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const material = new THREE.PointsMaterial({color: 0x00fff7, size: 0.1});
+    const material = new THREE.PointsMaterial({ color: 0x00fff7, size: 0.1 });
     const particles = new THREE.Points(particlesGeometry, material);
     scene.add(particles);
     camera.position.z = 5;
-
     const animate = () => {
       requestAnimationFrame(animate);
       particles.rotation.y += 0.0005;
       particles.rotation.x += 0.0003;
       renderer.render(scene, camera);
-    }
+    };
     animate();
+
+    // Traduções multilíngue
+    const translations = {
+      pt: {
+        subtitle: "Desenvolvedor em formação | Ciência da Computação",
+        sobre: "Sobre Mim",
+        sobreTexto: "Sou um estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e programação. Estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para soluções inovadoras.",
+        habilidades: "Habilidades Técnicas",
+        experiencia: "Experiência",
+        projetos: "Meus Projetos",
+        verGithub: "Ver no GitHub",
+        contato: "Contato"
+      },
+      en: {
+        subtitle: "Developer in training | Computer Science",
+        sobre: "About Me",
+        sobreTexto: "I'm a Computer Science student at UniCEUB, passionate about technology and coding. Always seeking challenges to grow and build innovative solutions.",
+        habilidades: "Technical Skills",
+        experiencia: "Experience",
+        projetos: "My Projects",
+        verGithub: "View on GitHub",
+        contato: "Contact"
+      },
+      es: {
+        subtitle: "Desarrollador en formación | Ciencias de la Computación",
+        sobre: "Sobre Mí",
+        sobreTexto: "Soy estudiante de Ciencias de la Computación en UniCEUB, apasionado por la tecnología y la programación. Siempre en busca de desafíos para crecer profesionalmente y crear soluciones innovadoras.",
+        habilidades: "Habilidades Técnicas",
+        experiencia: "Experiencia",
+        projetos: "Mis Proyectos",
+        verGithub: "Ver en GitHub",
+        contato: "Contacto"
+      }
+    };
+
+    const langSelector = document.getElementById("lang-selector");
+    langSelector.addEventListener("change", () => {
+      const lang = langSelector.value;
+      const t = translations[lang];
+      document.getElementById("subtitle").innerText = t.subtitle;
+      document.querySelector("#sobre h2").innerText = t.sobre;
+      document.getElementById("sobre-texto").innerText = t.sobreTexto;
+      document.querySelector("#habilidades h2").innerText = t.habilidades;
+      document.querySelector("#experiencia h2").innerText = t.experiencia;
+      document.querySelector("#projetos h2").innerText = t.projetos;
+      document.getElementById("btn-github").innerText = t.verGithub;
+      document.querySelector("#contato h2").innerText = t.contato;
+    });
   </script>
 </body>
 </html>
