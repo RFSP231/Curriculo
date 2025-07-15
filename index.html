@@ -167,166 +167,175 @@
   </section>
 
   <section id="experiencia" class="card">
-  <h2>Experiência</h2>
-  <p id="exp-titulo"><strong>Programador Independente</strong> (Jan 2024 - Presente)</p>
-  <ul id="exp-lista">
-    <li>Desenvolvimento Front-End com HTML e CSS.</li>
-    <li>Atendimento ao cliente e resolução de problemas técnicos.</li>
-    <li>Colaboração em projetos Back-End com C, Python, Java e JavaScript.</li>
-  </ul>
-</section>
+    <h2>Experiência</h2>
+    <p id="exp-titulo"><strong>Programador Independente</strong> (Jan 2024 - Presente)</p>
+    <ul id="exp-lista">
+      <li>Desenvolvimento Front-End com HTML e CSS.</li>
+      <li>Atendimento ao cliente e resolução de problemas técnicos.</li>
+      <li>Colaboração em projetos Back-End com C, Python, Java e JavaScript.</li>
+    </ul>
+  </section>
 
-<section id="contato" class="card">
-  <h2>Contato</h2>
-  <p>
-    <i class="fas fa-envelope"></i> 
-    <span id="email">rafaelfspedra@yahoo.com.br</span>
-    <a class="icon-link" href="mailto:rafaelfspedra@yahoo.com.br" title="Enviar e-mail">
-      <i class="fas fa-paper-plane"></i>
-    </a>
-  </p>
-  <p>
-    <i class="fas fa-phone"></i> 
-    <span id="telefone">(61) 99183-4920</span>
-    <a class="icon-link" href="https://wa.me/5561991834920" target="_blank" title="Enviar no WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </p>
-  <p><i class="fas fa-map-marker-alt"></i> Brasília - DF, Brasil</p>
-</section>
+  <section id="projetos" class="card">
+    <h2>Meus Projetos</h2>
+    <p>Confira meus projetos e códigos:</p>
+    <a href="https://github.com/rafaelpedra" target="_blank" class="button" id="btn-github">Ver no GitHub</a>
+  </section>
 
-<!-- SCRIPT ATUALIZADO -->
-<script>
-  // Animação de entrada
-  window.addEventListener('scroll', () => {
-    document.querySelectorAll('.card').forEach((card) => {
-      const top = card.getBoundingClientRect().top;
-      if (top < window.innerHeight) {
-        card.style.transform = 'translateY(0)';
-        card.style.opacity = '1';
-      }
+  <section id="contato" class="card">
+    <h2>Contato</h2>
+    <p>
+      <i class="fas fa-envelope"></i> 
+      <span id="email">rafaelfspedra@yahoo.com.br</span>
+      <a class="icon-link" href="mailto:rafaelfspedra@yahoo.com.br" title="Enviar e-mail">
+        <i class="fas fa-paper-plane"></i>
+      </a>
+    </p>
+    <p>
+      <i class="fas fa-phone"></i> 
+      <span id="telefone">(61) 99183-4920</span>
+      <a class="icon-link" href="https://wa.me/5561991834920" target="_blank" title="Enviar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </p>
+    <p><i class="fas fa-map-marker-alt"></i> Brasília - DF, Brasil</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rafael Pedra</p>
+  </footer>
+
+  <script>
+    // Animação de entrada
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.card').forEach((card) => {
+        const top = card.getBoundingClientRect().top;
+        if (top < window.innerHeight) {
+          card.style.transform = 'translateY(0)';
+          card.style.opacity = '1';
+        }
+      });
     });
-  });
 
-  // Three.js fundo com partículas (sem alterações)
-  const canvas = document.querySelector('#bg-3d');
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  const particlesGeometry = new THREE.BufferGeometry();
-  const count = 5000;
-  const positions = new Float32Array(count * 3);
-  for (let i = 0; i < count * 3; i++) {
-    positions[i] = (Math.random() - 0.5) * 100;
-  }
-  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  const material = new THREE.PointsMaterial({ color: 0x00fff7, size: 0.1 });
-  const particles = new THREE.Points(particlesGeometry, material);
-  scene.add(particles);
-  camera.position.z = 5;
-  const animate = () => {
-    requestAnimationFrame(animate);
-    particles.rotation.y += 0.0005;
-    particles.rotation.x += 0.0003;
-    renderer.render(scene, camera);
-  };
-  animate();
-
-  // Tradução dinâmica COMPLETA
-  const translations = {
-    pt: {
-      subtitle: "Desenvolvedor em formação | Ciência da Computação",
-      nav: ["Sobre", "Habilidades", "Experiência", "Projetos", "Contato"],
-      sobre: "Sobre Mim",
-      sobreTexto: "Sou um estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e programação. Estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para soluções inovadoras.",
-      habilidades: "Habilidades Técnicas",
-      experiencia: "Experiência",
-      expTitulo: "Programador Independente (Jan 2024 - Presente)",
-      expLista: [
-        "Desenvolvimento Front-End com HTML e CSS.",
-        "Atendimento ao cliente e resolução de problemas técnicos.",
-        "Colaboração em projetos Back-End com C, Python, Java e JavaScript."
-      ],
-      projetos: "Meus Projetos",
-      verGithub: "Ver no GitHub",
-      contato: "Contato",
-      email: "rafaelfspedra@yahoo.com.br",
-      telefone: "(61) 99183-4920"
-    },
-    en: {
-      subtitle: "Developer in training | Computer Science",
-      nav: ["About", "Skills", "Experience", "Projects", "Contact"],
-      sobre: "About Me",
-      sobreTexto: "I'm a Computer Science student at UniCEUB, passionate about technology and programming. I'm always looking for challenges that allow me to grow professionally and contribute to innovative solutions.",
-      habilidades: "Technical Skills",
-      experiencia: "Experience",
-      expTitulo: "Freelance Developer (Jan 2024 - Present)",
-      expLista: [
-        "Front-End development with HTML and CSS.",
-        "Customer support and technical troubleshooting.",
-        "Collaboration on Back-End projects using C, Python, Java and JavaScript."
-      ],
-      projetos: "My Projects",
-      verGithub: "View on GitHub",
-      contato: "Contact",
-      email: "rafaelfspedra@yahoo.com.br",
-      telefone: "(+55) 61 99183-4920"
-    },
-    es: {
-      subtitle: "Desarrollador en formación | Ciencias de la Computación",
-      nav: ["Sobre Mí", "Habilidades", "Experiencia", "Proyectos", "Contacto"],
-      sobre: "Sobre Mí",
-      sobreTexto: "Soy estudiante de Ciencias de la Computación en UniCEUB, apasionado por la tecnología y la programación. Siempre busco desafíos que me permitan crecer profesionalmente y contribuir con soluciones innovadoras.",
-      habilidades: "Habilidades Técnicas",
-      experiencia: "Experiencia",
-      expTitulo: "Desarrollador Freelance (Ene 2024 - Actualidad)",
-      expLista: [
-        "Desarrollo Front-End con HTML y CSS.",
-        "Atención al cliente y resolución de problemas técnicos.",
-        "Colaboración en proyectos Back-End con C, Python, Java y JavaScript."
-      ],
-      projetos: "Mis Proyectos",
-      verGithub: "Ver en GitHub",
-      contato: "Contacto",
-      email: "rafaelfspedra@yahoo.com.br",
-      telefone: "(+55) 61 99183-4920"
+    // Three.js fundo com partículas
+    const canvas = document.querySelector('#bg-3d');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    const particlesGeometry = new THREE.BufferGeometry();
+    const count = 5000;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count * 3; i++) {
+      positions[i] = (Math.random() - 0.5) * 100;
     }
-  };
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const material = new THREE.PointsMaterial({ color: 0x00fff7, size: 0.1 });
+    const particles = new THREE.Points(particlesGeometry, material);
+    scene.add(particles);
+    camera.position.z = 5;
+    const animate = () => {
+      requestAnimationFrame(animate);
+      particles.rotation.y += 0.0005;
+      particles.rotation.x += 0.0003;
+      renderer.render(scene, camera);
+    };
+    animate();
 
-  const langSelector = document.getElementById("lang-selector");
-  langSelector.addEventListener("change", () => {
-    const lang = langSelector.value;
-    const t = translations[lang];
+    // Tradução dinâmica completa
+    const translations = {
+      pt: {
+        subtitle: "Desenvolvedor em formação | Ciência da Computação",
+        nav: ["Sobre", "Habilidades", "Experiência", "Projetos", "Contato"],
+        sobre: "Sobre Mim",
+        sobreTexto: "Sou um estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e programação. Estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para soluções inovadoras.",
+        habilidades: "Habilidades Técnicas",
+        experiencia: "Experiência",
+        expTitulo: "Programador Independente (Jan 2024 - Presente)",
+        expLista: [
+          "Desenvolvimento Front-End com HTML e CSS.",
+          "Atendimento ao cliente e resolução de problemas técnicos.",
+          "Colaboração em projetos Back-End com C, Python, Java e JavaScript."
+        ],
+        projetos: "Meus Projetos",
+        verGithub: "Ver no GitHub",
+        contato: "Contato",
+        email: "rafaelfspedra@yahoo.com.br",
+        telefone: "(61) 99183-4920"
+      },
+      en: {
+        subtitle: "Developer in training | Computer Science",
+        nav: ["About", "Skills", "Experience", "Projects", "Contact"],
+        sobre: "About Me",
+        sobreTexto: "I'm a Computer Science student at UniCEUB, passionate about technology and programming. I'm always looking for challenges that allow me to grow professionally and contribute to innovative solutions.",
+        habilidades: "Technical Skills",
+        experiencia: "Experience",
+        expTitulo: "Freelance Developer (Jan 2024 - Present)",
+        expLista: [
+          "Front-End development with HTML and CSS.",
+          "Customer support and technical troubleshooting.",
+          "Collaboration on Back-End projects using C, Python, Java and JavaScript."
+        ],
+        projetos: "My Projects",
+        verGithub: "View on GitHub",
+        contato: "Contact",
+        email: "rafaelfspedra@yahoo.com.br",
+        telefone: "(+55) 61 99183-4920"
+      },
+      es: {
+        subtitle: "Desarrollador en formación | Ciencias de la Computación",
+        nav: ["Sobre Mí", "Habilidades", "Experiencia", "Proyectos", "Contacto"],
+        sobre: "Sobre Mí",
+        sobreTexto: "Soy estudiante de Ciencias de la Computación en UniCEUB, apasionado por la tecnología y la programación. Siempre busco desafíos que me permitan crecer profesionalmente y contribuir con soluciones innovadoras.",
+        habilidades: "Habilidades Técnicas",
+        experiencia: "Experiencia",
+        expTitulo: "Desarrollador Freelance (Ene 2024 - Actualidad)",
+        expLista: [
+          "Desarrollo Front-End con HTML y CSS.",
+          "Atención al cliente y resolución de problemas técnicos.",
+          "Colaboración en proyectos Back-End con C, Python, Java y JavaScript."
+        ],
+        projetos: "Mis Proyectos",
+        verGithub: "Ver en GitHub",
+        contato: "Contacto",
+        email: "rafaelfspedra@yahoo.com.br",
+        telefone: "(+55) 61 99183-4920"
+      }
+    };
 
-    document.getElementById("subtitle").innerText = t.subtitle;
-    document.getElementById("nav-sobre").innerText = t.nav[0];
-    document.getElementById("nav-habilidades").innerText = t.nav[1];
-    document.getElementById("nav-experiencia").innerText = t.nav[2];
-    document.getElementById("nav-projetos").innerText = t.nav[3];
-    document.getElementById("nav-contato").innerText = t.nav[4];
+    const langSelector = document.getElementById("lang-selector");
+    langSelector.addEventListener("change", () => {
+      const lang = langSelector.value;
+      const t = translations[lang];
 
-    document.querySelector("#sobre h2").innerText = t.sobre;
-    document.getElementById("sobre-texto").innerText = t.sobreTexto;
-    document.querySelector("#habilidades h2").innerText = t.habilidades;
-    document.querySelector("#experiencia h2").innerText = t.experiencia;
-    document.getElementById("exp-titulo").innerHTML = `<strong>${t.expTitulo.split(" (")[0]}</strong> (${t.expTitulo.split(" (")[1]}`;
-    
-    const expLista = document.getElementById("exp-lista");
-    expLista.innerHTML = ""; // limpa a lista
-    t.expLista.forEach(item => {
-      const li = document.createElement("li");
-      li.innerText = item;
-      expLista.appendChild(li);
+      document.getElementById("subtitle").innerText = t.subtitle;
+      document.getElementById("nav-sobre").innerText = t.nav[0];
+      document.getElementById("nav-habilidades").innerText = t.nav[1];
+      document.getElementById("nav-experiencia").innerText = t.nav[2];
+      document.getElementById("nav-projetos").innerText = t.nav[3];
+      document.getElementById("nav-contato").innerText = t.nav[4];
+
+      document.querySelector("#sobre h2").innerText = t.sobre;
+      document.getElementById("sobre-texto").innerText = t.sobreTexto;
+      document.querySelector("#habilidades h2").innerText = t.habilidades;
+      document.querySelector("#experiencia h2").innerText = t.experiencia;
+      document.getElementById("exp-titulo").innerHTML = `<strong>${t.expTitulo.split(" (")[0]}</strong> (${t.expTitulo.split(" (")[1]}`;
+
+      const expLista = document.getElementById("exp-lista");
+      expLista.innerHTML = "";
+      t.expLista.forEach(item => {
+        const li = document.createElement("li");
+        li.innerText = item;
+        expLista.appendChild(li);
+      });
+
+      document.querySelector("#projetos h2").innerText = t.projetos;
+      document.getElementById("btn-github").innerText = t.verGithub;
+      document.querySelector("#contato h2").innerText = t.contato;
+
+      document.getElementById("email").innerText = t.email;
+      document.getElementById("telefone").innerText = t.telefone;
     });
-
-    document.querySelector("#projetos h2").innerText = t.projetos;
-    document.getElementById("btn-github").innerText = t.verGithub;
-    document.querySelector("#contato h2").innerText = t.contato;
-
-    document.getElementById("email").innerText = t.email;
-    document.getElementById("telefone").innerText = t.telefone;
-  });
-</script>
+  </script>
 </body>
 </html>
