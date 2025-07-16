@@ -1,118 +1,141 @@
-* {
-  box-sizing: border-box;
-}
-
+/* Reset e base */
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
   width: 100%;
-  font-family: 'Orbitron', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #f0f0f0;
+  height: 100%;
+  background: black;
+  font-family: 'Share Tech Mono', monospace;
+  color: #0f0;
   overflow-x: hidden;
 }
 
-#bg-3d {
+/* Canvas Matrix Rain */
+#matrix {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
 
+/* Cabeçalho */
 header {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   text-align: center;
   padding: 2rem 1rem;
-  color: #00fff7;
+  border-bottom: 1px solid #0f0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+#subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
 }
 
 #lang-selector {
-  background: #121212;
-  color: #00fff7;
-  border: 1px solid #00fff7;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
+  background: #000;
+  color: #0f0;
+  border: 1px solid #0f0;
+  padding: 0.5rem 1rem;
   margin-top: 1rem;
-  font-family: inherit;
-  font-size: 1rem;
+  font-family: 'Share Tech Mono', monospace;
 }
 
+/* Navegação */
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  background: #121212;
-  padding: 0.7rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background: #000;
+  border-bottom: 1px solid #0f0;
+  padding: 0.5rem;
 }
 
 nav a {
-  color: #00fff7;
+  color: #0f0;
   text-decoration: none;
-  font-weight: bold;
+  margin: 0.3rem 0.5rem;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
 }
 
 nav a:hover {
-  background: rgba(0, 255, 247, 0.1);
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid #0f0;
 }
 
+/* Conteúdo principal */
+main {
+  padding: 2rem 1rem;
+}
+
+/* Cartões de conteúdo */
 .card {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0,255,247,0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #0f0;
   margin: 2rem auto;
   padding: 1.5rem;
-  width: 90%;
   max-width: 800px;
-  box-shadow: 0 0 20px #00fff733, 0 0 10px #00fff744 inset;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
 
 .card h2 {
-  border-bottom: 2px solid #00fff7;
-  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #0f0;
   margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
 }
 
 ul {
-  padding-left: 1.2rem;
-  margin: 0;
+  padding-left: 1.5rem;
 }
 
+ul li {
+  margin: 0.5rem 0;
+}
+
+/* Botões */
 .button {
   display: inline-block;
   margin-top: 1rem;
-  background: #00fff7;
-  color: #000;
+  border: 1px solid #0f0;
+  color: #0f0;
   padding: 0.7rem 1.2rem;
-  border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
+  font-family: 'Share Tech Mono', monospace;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  background: #00b8a9;
+  background: #0f0;
+  color: #000;
 }
 
+/* Ícones de contato */
+#contato i {
+  margin-right: 0.5rem;
+}
+
+/* Rodapé */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #0a0a0a;
+  border-top: 1px solid #0f0;
   font-size: 0.9rem;
-  color: #888;
 }
 
-@media (max-width: 600px) {
+/* Responsividade */
+@media (max-width: 768px) {
   header {
     padding: 1.5rem 1rem;
   }
@@ -120,13 +143,13 @@ footer {
   nav {
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
   }
 
   nav a {
+    display: block;
     width: 100%;
     text-align: center;
-    padding: 0.8rem 0;
+    margin: 0.3rem 0;
   }
 
   .card {
@@ -138,6 +161,5 @@ footer {
     display: block;
     width: 100%;
     text-align: center;
-    padding: 0.8rem 1rem;
   }
 }
