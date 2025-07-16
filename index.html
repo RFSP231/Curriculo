@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rafael Pedra | Desenvolvedor</title>
+  <title>Rafael Pedra | Hacker Dev</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <canvas id="bg-3d"></canvas>
+  <!-- Matrix Rain -->
+  <canvas id="matrix"></canvas>
 
+  <!-- Cabeçalho -->
   <header>
-    <h1>Rafael Pedra</h1>
-    <p id="subtitle">Desenvolvedor em formação | Ciência da Computação</p>
+    <h1>&gt; Rafael Pedra</h1>
+    <p id="subtitle">Hacker em formação | Ciência da Computação</p>
     <select id="lang-selector">
       <option value="pt" selected>🇧🇷 Português</option>
       <option value="en">🇺🇸 English</option>
@@ -22,110 +23,193 @@
     </select>
   </header>
 
+  <!-- Navegação -->
   <nav>
-    <a href="#sobre" id="nav-sobre">Sobre</a>
-    <a href="#habilidades" id="nav-habilidades">Habilidades</a>
-    <a href="#experiencia" id="nav-experiencia">Experiência</a>
-    <a href="#projetos" id="nav-projetos">Projetos</a>
-    <a href="#contato" id="nav-contato">Contato</a>
+    <a href="#sobre" id="nav-sobre">[ SOBRE ]</a>
+    <a href="#habilidades" id="nav-habilidades">[ HABILIDADES ]</a>
+    <a href="#experiencia" id="nav-experiencia">[ EXPERIÊNCIA ]</a>
+    <a href="#projetos" id="nav-projetos">[ PROJETOS ]</a>
+    <a href="#contato" id="nav-contato">[ CONTATO ]</a>
   </nav>
 
-  <section id="sobre" class="card">
-    <h2>Sobre Mim</h2>
-    <p id="sobre-texto">Sou um estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e programação.</p>
-  </section>
+  <!-- Conteúdo -->
+  <main>
+    <section id="sobre" class="card">
+      <h2># Sobre Mim</h2>
+      <p id="sobre-texto">Sou estudante de Ciência da Computação, apaixonado por tecnologia, segurança digital e programação.</p>
+    </section>
 
-  <section id="habilidades" class="card">
-    <h2>Habilidades Técnicas</h2>
-    <ul id="skills-list">
-      <li>HTML/CSS (Intermediário)</li>
-      <li>JavaScript (Intermediário)</li>
-      <li>Python, C, C++ (Intermediário)</li>
-      <li>Java (Iniciante)</li>
-      <li>SQL (Intermediário)</li>
-      <li>Pacote Office (Avançado)</li>
-    </ul>
-  </section>
+    <section id="habilidades" class="card">
+      <h2># Habilidades</h2>
+      <ul id="skills-list">
+        <li>HTML/CSS (Intermediário)</li>
+        <li>JavaScript (Intermediário)</li>
+        <li>Python, C, C++ (Intermediário)</li>
+        <li>Java (Iniciante)</li>
+        <li>SQL (Intermediário)</li>
+        <li>Linux & Terminal (Avançado)</li>
+      </ul>
+    </section>
 
-  <section id="experiencia" class="card">
-    <h2>Experiência</h2>
-    <p id="exp-titulo"><strong>Programador Independente</strong> (Jan 2024 - Presente)</p>
-    <ul id="exp-lista">
-      <li>Desenvolvimento Front-End com HTML e CSS.</li>
-      <li>Atendimento ao cliente e resolução de problemas técnicos.</li>
-      <li>Colaboração em projetos Back-End com C, Python, Java e JavaScript.</li>
-    </ul>
-  </section>
+    <section id="experiencia" class="card">
+      <h2># Experiência</h2>
+      <p id="exp-titulo"><strong>Freelance Hacker</strong> (Jan 2024 - Presente)</p>
+      <ul id="exp-lista">
+        <li>Desenvolvimento Front-End e Back-End.</li>
+        <li>Scripts de automação e análise de segurança.</li>
+        <li>Contribuições Open Source.</li>
+      </ul>
+    </section>
 
-  <section id="projetos" class="card">
-    <h2>Meus Projetos</h2>
-    <p>Confira meus projetos e códigos:</p>
-    <a href="https://github.com/rafaelpedra" target="_blank" class="button" id="btn-github">Ver no GitHub</a>
-  </section>
+    <section id="projetos" class="card">
+      <h2># Projetos</h2>
+      <p>Veja meus repositórios:</p>
+      <a href="https://github.com/rafaelpedra" target="_blank" class="button">&gt; GitHub</a>
+    </section>
 
-  <section id="contato" class="card">
-    <h2>Contato</h2>
-    <p>
-      <i class="fas fa-envelope"></i> 
-      <span id="email">rafaelfspedra@yahoo.com.br</span>
-      <a class="button" href="mailto:rafaelfspedra@yahoo.com.br" title="Enviar e-mail">Enviar E-mail</a>
-    </p>
-    <p>
-      <i class="fas fa-phone"></i> 
-      <span id="telefone">(61) 99183-4920</span>
-      <a class="button" href="https://wa.me/5561991834920" target="_blank" title="Enviar no WhatsApp">Enviar Whatsapp</a>
-    </p>
-    <p><i class="fas fa-map-marker-alt"></i> Brasília - DF, Brasil</p>
-  </section>
+    <section id="contato" class="card">
+      <h2># Contato</h2>
+      <p><i class="fas fa-envelope"></i> <span id="email">rafaelfspedra@yahoo.com.br</span></p>
+      <a class="button" href="mailto:rafaelfspedra@yahoo.com.br">Enviar E-mail</a>
+      <p><i class="fas fa-phone"></i> <span id="telefone">(61) 99183-4920</span></p>
+      <a class="button" href="https://wa.me/5561991834920" target="_blank">WhatsApp</a>
+      <p><i class="fas fa-map-marker-alt"></i> Brasília - DF</p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Rafael Pedra</p>
+    <p>&copy; 2025 Rafael Pedra | Hacker Mode</p>
   </footer>
 
+  <!-- MATRIX RAIN -->
   <script>
-    const canvas = document.querySelector('#bg-3d');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    const particlesGeometry = new THREE.BufferGeometry();
-    const count = 5000;
-    const positions = new Float32Array(count * 3);
-    for (let i = 0; i < count * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 100;
+    const letters = "アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#0F0";
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
     }
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const material = new THREE.PointsMaterial({ color: 0x00fff7, size: 0.1 });
-    const particles = new THREE.Points(particlesGeometry, material);
-    scene.add(particles);
-    camera.position.z = 5;
 
-    const animate = () => {
-      requestAnimationFrame(animate);
-      particles.rotation.y += 0.0005;
-      particles.rotation.x += 0.0003;
-      renderer.render(scene, camera);
-    };
-    animate();
+    setInterval(draw, 33);
 
     window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
+  </script>
 
-    // Tradução (mantém igual)
-    const translations = { /* ... MANTÉM IGUAL ... */ };
+  <!-- TRADUÇÃO -->
+  <script>
+    const translations = {
+      pt: {
+        subtitle: "Hacker em formação | Ciência da Computação",
+        nav: ["[ SOBRE ]", "[ HABILIDADES ]", "[ EXPERIÊNCIA ]", "[ PROJETOS ]", "[ CONTATO ]"],
+        sobre: "# Sobre Mim",
+        sobreTexto: "Sou estudante de Ciência da Computação, apaixonado por tecnologia, segurança digital e programação.",
+        habilidades: "# Habilidades",
+        habilidadesLista: [
+          "HTML/CSS (Intermediário)",
+          "JavaScript (Intermediário)",
+          "Python, C, C++ (Intermediário)",
+          "Java (Iniciante)",
+          "SQL (Intermediário)",
+          "Linux & Terminal (Avançado)"
+        ],
+        experiencia: "# Experiência",
+        expCargo: "Freelance Hacker",
+        expData: "Jan 2024 - Presente",
+        expLista: [
+          "Desenvolvimento Front-End e Back-End.",
+          "Scripts de automação e análise de segurança.",
+          "Contribuições Open Source."
+        ],
+        projetos: "# Projetos",
+        contato: "# Contato",
+        email: "rafaelfspedra@yahoo.com.br",
+        telefone: "(61) 99183-4920"
+      },
+      en: {
+        subtitle: "Hacker in training | Computer Science",
+        nav: ["[ ABOUT ]", "[ SKILLS ]", "[ EXPERIENCE ]", "[ PROJECTS ]", "[ CONTACT ]"],
+        sobre: "# About Me",
+        sobreTexto: "I'm a Computer Science student, passionate about technology, digital security and programming.",
+        habilidades: "# Skills",
+        habilidadesLista: [
+          "HTML/CSS (Intermediate)",
+          "JavaScript (Intermediate)",
+          "Python, C, C++ (Intermediate)",
+          "Java (Beginner)",
+          "SQL (Intermediate)",
+          "Linux & Terminal (Advanced)"
+        ],
+        experiencia: "# Experience",
+        expCargo: "Freelance Hacker",
+        expData: "Jan 2024 - Present",
+        expLista: [
+          "Front-End and Back-End Development.",
+          "Automation scripts and security analysis.",
+          "Open Source contributions."
+        ],
+        projetos: "# Projects",
+        contato: "# Contact",
+        email: "rafaelfspedra@yahoo.com.br",
+        telefone: "(+55) 61 99183-4920"
+      },
+      es: {
+        subtitle: "Hacker en formación | Ciencias de la Computación",
+        nav: ["[ SOBRE MÍ ]", "[ HABILIDADES ]", "[ EXPERIENCIA ]", "[ PROYECTOS ]", "[ CONTACTO ]"],
+        sobre: "# Sobre Mí",
+        sobreTexto: "Soy estudiante de Ciencias de la Computación, apasionado por la tecnología, la seguridad digital y la programación.",
+        habilidades: "# Habilidades",
+        habilidadesLista: [
+          "HTML/CSS (Intermedio)",
+          "JavaScript (Intermedio)",
+          "Python, C, C++ (Intermedio)",
+          "Java (Principiante)",
+          "SQL (Intermedio)",
+          "Linux & Terminal (Avanzado)"
+        ],
+        experiencia: "# Experiencia",
+        expCargo: "Hacker Freelance",
+        expData: "Ene 2024 - Actualidad",
+        expLista: [
+          "Desarrollo Front-End y Back-End.",
+          "Scripts de automatización y análisis de seguridad.",
+          "Contribuciones Open Source."
+        ],
+        projetos: "# Proyectos",
+        contato: "# Contacto",
+        email: "rafaelfspedra@yahoo.com.br",
+        telefone: "(+55) 61 99183-4920"
+      }
+    };
+
     const langSelector = document.getElementById("lang-selector");
     langSelector.addEventListener("change", () => {
       const lang = langSelector.value;
       const t = translations[lang];
+
       document.getElementById("subtitle").innerText = t.subtitle;
       document.getElementById("nav-sobre").innerText = t.nav[0];
       document.getElementById("nav-habilidades").innerText = t.nav[1];
@@ -135,6 +219,7 @@
       document.querySelector("#sobre h2").innerText = t.sobre;
       document.getElementById("sobre-texto").innerText = t.sobreTexto;
       document.querySelector("#habilidades h2").innerText = t.habilidades;
+
       const skillsList = document.getElementById("skills-list");
       skillsList.innerHTML = "";
       t.habilidadesLista.forEach(item => {
@@ -142,8 +227,10 @@
         li.innerText = item;
         skillsList.appendChild(li);
       });
+
       document.querySelector("#experiencia h2").innerText = t.experiencia;
       document.getElementById("exp-titulo").innerHTML = `<strong>${t.expCargo}</strong> (${t.expData})`;
+
       const expLista = document.getElementById("exp-lista");
       expLista.innerHTML = "";
       t.expLista.forEach(item => {
@@ -151,12 +238,13 @@
         li.innerText = item;
         expLista.appendChild(li);
       });
+
       document.querySelector("#projetos h2").innerText = t.projetos;
-      document.getElementById("btn-github").innerText = t.verGithub;
       document.querySelector("#contato h2").innerText = t.contato;
       document.getElementById("email").innerText = t.email;
       document.getElementById("telefone").innerText = t.telefone;
     });
   </script>
+
 </body>
 </html>
